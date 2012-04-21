@@ -7,5 +7,5 @@ set :public_folder, "./public"
 set :views, "./views"
 
 get "/" do
-  "hai"
+  erb :welcome
 end
