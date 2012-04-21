@@ -9,7 +9,7 @@
             GrowStrong.render_login_widget()
         },
         render_login_widget: function(){
-            $("body").append("<div>User Name <input class='email_address' value=''  /><input class='log_on_button' type='button' value='Log on' /></div>");
+            $("body").append("<div>Email address <input class='email_address' value=''  /><input class='log_on_button' type='button' value='Log on' /></div>");
             var email_address = $(".email_address").val();
             $(".log_on_button").on("click", function(){GrowStrong.login(email_address)});
         },
@@ -19,6 +19,8 @@
         render_teacher_view_widget: function(){
             $("body").empty();
             $("body").append("<div class='teacher_info'></div>");
+            $("body").append("<div class='questions_answered'></div>");
+            
             GrowStrong.display_teacher({
                 first_name: "Justin",
                 last_name: "Bozo",
@@ -32,7 +34,10 @@
             );*/
         },
         display_teacher: function(teacher_info){
-
+            $(".teacher_info").append("<span class='first_name'></span> <span class='last_name'></span>");
+            $(".teacher_info .first_name").text(teacher_info.first_name);
+            $(".teacher_info .last_name").text(teacher_info.last_name);
+            $(".questions_answered").text(teacher_info.questions_answered);
         },
         display_question: function(question_info){
 
