@@ -15,60 +15,8 @@
   </style>
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
   <script type="text/javascript" src="jquery.js"></script>
-  <script type="text/javascript" src="js/mustache.js"></script>
-<script>
-
-    var GrowStrong = {
-        page_loaded: function(){
-            GrowStrong.render_login_widget()
-        },
-        render_login_widget: function(){
-            $("body").append("<div>Email address <input class='email_address' value=''  /><input class='log_on_button' type='button' value='Log on' /></div>");
-            $(".log_on_button").on("click", function(){
-                var email_address = $(".email_address").val();
-                GrowStrong.login(email_address)}
-            );
-        },
-        login: function(email_address){
-            GrowStrong.render_teacher_view_widget();
-        },
-        render_teacher_view_widget: function(){
-            $("body").empty();
-            $("body").append("<header>\
-                    <div class='logo-header'>\
-                    <a href='logo'></a>\
-                    </div>\
-                    </header>");
-            GrowStrong.display_teacher({
-                first_name: "Justin",
-                last_name: "Bozo",
-                school_name: "Some Crazy School",
-                questions_answered: 52
-            });
-            /*GrowStrong.get_next_question(
-                function(next_question){
-                    GrowStrong.display_question(next_question);
-                }
-            );*/
-        },
-        display_teacher: function(teacher_info){
-            var teacher_info_html = Mustache.render("templates/teacher_profile.js", teacher_info);
-            $("body").append(teacher_info_html);
-            //$(".teacher_info").append("<span class='first_name'></span> <span class='last_name'></span><br /><span class='school_name'></span>");
-            $(".teacher_info .profile .profile-name").text("John Doe");
-            $(".teacher_info .profile-school").text(teacher_info.school_name);
-            $(".teacher_info .question-count .count-display").text(teacher_info.questions_answered);
-        },
-        display_question: function(question_info){
-
-        }
-    };
-</script>
 </head>
 <body>
-<!-- This must be the last thing in the document so we know that the whole document has loaded -->
-<script type="text/javascript">
-    GrowStrong.page_loaded();
-</script>
+<a href="/interviewee_sign_up">Interviewees</a> <a href="/interviewer_sign_up">Interviewers</a>
 </body>
 </html>
