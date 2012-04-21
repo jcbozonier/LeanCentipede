@@ -1,5 +1,4 @@
 require "sinatra"
-require "sinatra/cookies"
 require "uuid"
 require "json"
 require "rack"
