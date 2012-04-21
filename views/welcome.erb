@@ -1,8 +1,49 @@
 <html>
 <head>
 <title>GrowStrong&trade;</title>
+<script type="text/javascript" src="/jquery.js"></script>
+<script>
+
+    var GrowStrong = {
+        page_loaded: function(){
+            GrowStrong.render_login_widget()
+        },
+        render_login_widget: function(){
+            $("body").append("<div>User Name <input class='email_address' value=''  /><input class='log_on_button' type='button' value='Log on' /></div>");
+            var email_address = $(".email_address").val();
+            $(".log_on_button").on("click", function(){GrowStrong.login(email_address)});
+        },
+        login: function(email_address){
+            GrowStrong.render_teacher_view_widget();
+        },
+        render_teacher_view_widget: function(){
+            $("body").empty();
+            $("body").append("<div class='teacher_info'></div>");
+            GrowStrong.display_teacher({
+                first_name: "Justin",
+                last_name: "Bozo",
+                school_name: "Some Crazy School",
+                questions_answered: 52
+            });
+            /*GrowStrong.get_next_question(
+                function(next_question){
+                    GrowStrong.display_question(next_question);
+                }
+            );*/
+        },
+        display_teacher: function(teacher_info){
+
+        },
+        display_question: function(question_info){
+
+        }
+    };
+</script>
 </head>
 <body>
-HAI
+<!-- This must be the last thing in the document so we know that the whole document has loaded -->
+<script type="text/javascript">
+    GrowStrong.page_loaded();
+</script>
 </body>
 </html>
