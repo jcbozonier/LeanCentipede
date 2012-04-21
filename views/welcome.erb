@@ -1,8 +1,26 @@
 <html>
 <head>
 <title>GrowStrong&trade;</title>
+<script type="text/javascript" src="/jquery.js"></script>
+<script>
+
+    var GrowStrong = {
+        page_loaded: function(){
+            GrowStrong.render_login_widget()
+            $(".log_on_button")
+        },
+        render_login_widget: function(){
+            $("body").append("<div>User Name <input value=''  /><input class='log_on_button' type='button' value='Log on' /></div>")
+        }
+    };
+</script>
 </head>
 <body>
 HAI
+
+<!-- This must be the last thing in the document so we know that the whole document has loaded -->
+<script type="text/javascript">
+    GrowStrong.page_loaded();
+</script>
 </body>
 </html>
