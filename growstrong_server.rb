@@ -19,6 +19,6 @@ get "/interviewee_sign_up" do
   erb :interviewee_sign_up
 end
 
-get "/interviewee_sign_up_submitted" do
+post "/interviewee_sign_up_submitted" do
   erb :interviewee_sign_up_submitted
 end
