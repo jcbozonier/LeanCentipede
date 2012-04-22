@@ -14,4 +14,6 @@ body{font-family:helvetica, arial, sans-serif; font-size:11px; }
   #content_bg textarea{width:100%; height:50px;}
 input[type="radio"] {width:25px;}
   #content_bg label{clear:both; font-size:14px; color:#979797;display:block;}
+  #content_bg p{font-size:16px; color:#979797;}
+  #content_bg li{margin:6px 25px; padding:5px 0; list-style:circle; font-size:14px;}
   .clear{clear:both;}
