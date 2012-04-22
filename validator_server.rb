@@ -10,6 +10,6 @@ post "/interviewer_sign_up_submitted" do
   erb :interviewer_sign_up_submitted
 end
 
-get "/check_validation_interview_order" do
+post "/check_validation_interview_order" do
   erb :check_validation_interview_order
 end
