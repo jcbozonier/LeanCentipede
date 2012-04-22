@@ -1,6 +1,5 @@
 require 'sinatra'
-require './growstrong_server'
-require './validator_server'
+require './leancentipede_server'
 
 
 run Sinatra::Application

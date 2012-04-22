@@ -46,8 +46,8 @@ get "/" do
   erb :welcome
 end
 
-get "/interviewee_sign_up" do
-  erb :interviewee_sign_up
+get "/validator_sign_up" do
+  erb :validator_sign_up
 end
 
 get "/view_validators_and_visionaries" do
@@ -56,11 +56,11 @@ get "/view_validators_and_visionaries" do
     erb :view_validators_and_visionaries
 end
 
-get "/returning_interviewee" do
-  erb :interviewee_sign_in
+get "/returning_validator" do
+  erb :validator_sign_in
 end
 
-post "/interviewee_sign_up_submitted" do
+post "/validator_sign_up_submitted" do
 
   survey = {}
 
@@ -77,10 +77,10 @@ post "/interviewee_sign_up_submitted" do
 
   $validators.insert(survey, :safe=>true)
 
-  erb :interviewee_sign_up_submitted
+  erb :validator_sign_up_submitted
 end
 
-post "/interviewee_sign_in_submitted" do
+post "/validator_sign_in_submitted" do
 
   username = params[:email]
   password = params[:password]
@@ -98,4 +98,31 @@ post "/interviewee_sign_in_submitted" do
 
   return "You don't exist"
 
+end
+
+get "/visionary_sign_up" do
+  erb :visionary_sign_up
+end
+
+get "/search_for_validation" do
+  erb :search_for_validation
+end
+
+post "/visionary_sign_up_submitted" do
+  erb :visionary_sign_up_submitted
+end
+
+post "/check_validation_interview_order" do
+  profile = {}
+  profile[:gender] = params[:gender]
+  profile[:age] = params[:age]
+  profile[:income] = params[:income]
+  profile[:products] = params[:products]
+  profile[:expertise] = params[:expertise]
+  profile[:adoption] = params[:adoption]
+  profile[:voice_call] = params[:voice_call]
+
+  $profile_requests.insert(profile, :safe=>true)
+
+  erb :visionary_sign_up_submitted
 end
