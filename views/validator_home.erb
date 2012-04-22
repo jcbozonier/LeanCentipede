@@ -1,3 +1,64 @@
 <%= erb :html_header  %>
+
     <h1>Current Surveys</h1>
+<form method="post" action="/validator_sign_up_submitted">
+  <p>
+    <label for="email">Email: </label>
+    <input name="email" type="text" value="<%=@validator["email"]%>" />
+  </p>
+  <p>
+    <label for="pass">Password: </label>
+    <input name="pass" type="password" value="<%=@validator["pass"]%>" />
+  </p>
+  <p>
+    <label for="paypal_id">Paypal User Id (optional): </label>
+    <input name="paypal_id" type="text" value="<%=@validator["paypal_id"]%>" />
+  </p>
+  <label for="gender">Gender</label>
+  <input name="gender" type="text" value="<%=@validator["gender"]%>" />
+  </p>
+  <p>
+    <label for="age">Age</label>
+    <input name="age" value="<%=@validator["age"]%>" />
+  </p>
+  <p>
+    <label for="income">Income</label>
+    <select name="income">
+      <option><$25,000</option>
+      <option>$25,000-$50,000</option>
+      <option>$50,000-$75,000</option>
+      <option>$75,000-$100,000</option>
+      <option>$100,000+</option>
+    </select>
+  </p>
+  <p>
+    <label for="products">What products or services do you see yourself buying in the next 6 months?</label>
+    <textarea name="products" value="<%=@validator["products"]%>"></textarea>
+  </p>
+
+  <p>
+    <label for="expertise">What do you consider yourself a specialist/expert in?</label>
+    <textarea name="expertise"></textarea>
+  </p>
+
+  <p>
+    <label for="adoption">How would you describe your comfort level in regards to buying/recommending new products and services you love?
+      <br/><input type="radio" name="adoption" value="1"> I gotta be the first on my block with the new and shiny<br/>
+      <input type="radio" name="adoption" value="2"> I wait until I hear a good review from a friend<br/>
+      <input type="radio" name="adoption" value="3"> I buy once all my friends have it and I know it's a safe purchase.<br/>
+  </p>
+
+  <p>
+    <label for="voice_call">Are you willing to do a voice call if you're approached for more detailed information?</label>
+    <label><input type="radio" name="voice_call" value="yes" checked/> Yes</label>
+    <label><input type="radio" name="voice_call" value="no" /> No</label>
+  </p>
+
+  <p>
+    <label for="max_questions">How many open ended questions would you be willing to answer for $7?</label>
+    <input type="text" name="max_questions" value="15" />
+  </p>
+
+  <input type="submit" value="Sign up!" />
+</form>
 <%= erb :html_footer  %>

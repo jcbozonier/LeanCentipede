@@ -4,6 +4,8 @@ require "json"
 require "rack"
 require "mongo"
 
+enable :sessions
+
 $db = Mongo::Connection.new("ds029287.mongolab.com", 29287).db("leancentipede")
 $db.authenticate("humancentipede", "abc123!")
 $validators = $db.collection("validators")
@@ -73,10 +75,11 @@ post "/validator_sign_in_submitted" do
   if((!result.nil?) && result.count > 0 )
 
     if(result["pass"] == password)
+      session[:email] = username
       redirect '/validator_home'
     else
       @message = "Invalid username or password"
-      return :validator_sign_in
+      return erb :validator_sign_in
     end
   end
 
@@ -138,6 +141,9 @@ post "/visionary_sign_up_submitted" do
 end
 
 get "/validator_home" do
+
+  @validator = $validators.find({:email=> session[:email]}).first
+
   return erb :validator_home
 end
 
