@@ -1,11 +1,11 @@
 <%= erb :html_header %>
     <form method="post" action="/visionary_sign_up_submitted">
         <p>
-          Email: <input type="text" value="" />
+          <label for="email">Email: </label><input name="email" type="text" value="" />
         </p>
         <p>
-          Password: <input type="password" value="" />
+          <label for="password">Password: </label><input name="password" type="password" value="" />
         </p>
-        <input type="submit" value="Validate Your Plan!" />
+        <p><input type="submit" value="Validate Your Plan!" /></p>
     </form>
 <%= erb :html_footer %>
