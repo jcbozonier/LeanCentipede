@@ -218,11 +218,14 @@ some additional styles are given if you need to use while customization*/
 }
 /*----------logo----------*/
 .logo {
-	float: left;
-	font-family: 'Mate SC', serif;
-	font-size:32px;
-	letter-spacing:1px;
-	padding:10px 20px 10px 0 ;
+    float: left;
+    background:url('../images/logo.jpg') no-repeat 0 0;
+    letter-spacing:1px;
+    padding:0px 20px 0px 0;
+    display:block;
+    text-indent:-9999px;
+    height:80px;
+    width:245px;
 
 
 }

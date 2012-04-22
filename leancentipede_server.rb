@@ -40,9 +40,7 @@ get "/returning_validator" do
 end
 
 post "/validator_sign_up_submitted" do
-
   survey = {}
-
   survey[:email] = params[:email]
   survey[:pass] =  params[:pass]
   survey[:paypal_id]= params[:paypal_id]
@@ -66,14 +64,12 @@ post "/validator_sign_up_submitted" do
 end
 
 post "/validator_sign_in_submitted" do
-
   username = params[:email]
   password = params[:password]
 
   result = $validators.find({:email=> username}).first
 
   if((!result.nil?) && result.count > 0 )
-
     if(result["pass"] == password)
       session[:email] = username
       redirect '/validator_home'
@@ -96,17 +92,20 @@ get "/returning_visionary" do
   erb :visionary_sign_in
 end
 
-post "/visionary_sign_in_submitted" do
+get "/visionary_sign_in_submitted" do
+    redirect "/returning_visionary" if session[:visionary_email] == nil
+    redirect '/visionary_sign_in'
+end
 
+post "/visionary_sign_in_submitted" do
   username = params[:email]
   password = params[:password]
 
   result = $visionaries.find({:email=> username}).first
 
   if((!result.nil?) && result.count > 0 )
-
     if(result["password"] == password)
-
+      session[:visionary_email] = result["email"]
       return erb :visionary_signed_in
     else
       @message = "Invalid username or password"
@@ -136,7 +135,7 @@ post "/visionary_sign_up_submitted" do
   end
 
   $visionaries.insert(visionary, :safe=>true)
-
+  session[:visionary_email] = visionary[:email]
   erb :visionary_sign_up_submitted
 end
 
@@ -147,8 +146,14 @@ get "/validator_home" do
   return erb :validator_home
 end
 
+get "/check_validation_interview_order" do
+    erb :visionary_sign_up_submitted
+end
+
 post "/check_validation_interview_order" do
   profile = {}
+
+  profile[:visionary_email] = session[:visionary_email]
   profile[:gender] = params[:gender]
   profile[:age] = params[:age]
   profile[:income] = params[:income]
