@@ -88,7 +88,7 @@ post "/validator_sign_in_submitted" do
     end
   end
 
-  @message = "Invalid username or password"
+  @message = "Invalid username or password 2"
   return erb :validator_sign_in
 
 end
@@ -101,9 +101,13 @@ get "/returning_visionary" do
   erb :visionary_sign_in
 end
 
+get "/visionary_signed_in" do
+    erb :visionary_signed_in
+end
+
 get "/visionary_sign_in_submitted" do
     redirect "/returning_visionary" if session[:visionary_email] == nil
-    redirect '/visionary_sign_in'
+    redirect '/visionary_signed_in'
 end
 
 post "/visionary_sign_in_submitted" do
@@ -115,15 +119,15 @@ post "/visionary_sign_in_submitted" do
   if((!result.nil?) && result.count > 0 )
     if(result["password"] == password)
       session[:visionary_email] = result["email"]
-      return erb :visionary_signed_in
+      redirect "/visionary_signed_in"
     else
       @message = "Invalid username or password"
-      return erb :visionary_sign_in
+      redirect "/returning_visionary"
     end
   end
 
   @message = "Invalid username or password"
-  return erb :visionary_sign_in
+  redirect "/returning_visionary"
 
 end
 
