@@ -105,6 +105,10 @@ get "/visionary_sign_up" do
   erb :visionary_sign_up
 end
 
+get "/returning_visionary" do
+
+end
+
 get "/search_for_validation" do
   erb :search_for_validation
 end
