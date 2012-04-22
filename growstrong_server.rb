@@ -85,11 +85,11 @@ post "/interviewee_sign_in_submitted" do
   username = params[:email]
   password = params[:password]
 
-  result = $validators.select{|user| user[:email] == username}.first
+  result = $validators.find({:email=> username}).first
 
   if((!result.nil?) && result.count > 0 )
 
-    if(result[:pass] == password)
+    if(result["pass"] == password)
       return "You're in"
     else
       return "Invalid password"
