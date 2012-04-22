@@ -1,6 +1,7 @@
 <html>
 <body>
-<form>
+<form method="post" action="/check_validation_interview_order">
+<h1>Interviewee Criteria</h1>
  <p>
   Gender
   male female other (please specify): <input type="text" value="" />
@@ -40,6 +41,10 @@ Are you willing to do a voice call if you're approached for more detailed inform
  <input type="checkbox" value="required?" checked/>
 [yes] [no]
 </p>
+
+<h1>Validation Survey</h1>
+
+<textarea name="survey" rows="30" cols="120"></textarea>
 
 <p>
     <input type="submit" value="Create your validation survey!" />
