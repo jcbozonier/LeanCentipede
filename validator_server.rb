@@ -12,7 +12,7 @@ post "/interviewer_sign_up_submitted" do
   erb :interviewer_sign_up_submitted
 end
 
-get "/check_validation_interview_order" do
+post "/check_validation_interview_order" do
 
   profile = {}
   profile[:gender] = params[:gender]
@@ -27,5 +27,5 @@ get "/check_validation_interview_order" do
 
   puts $requested_profiles
 
-  erb :check_validation_interview_order
+  erb :interviewer_sign_up_submitted
 end
