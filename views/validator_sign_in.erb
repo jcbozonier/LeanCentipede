@@ -1,14 +1,16 @@
 <%= erb :html_header  %>
 
-<h1>WELCOME BACK!!!</h1>
+<h1>Welcome Back</h1>
 <form method="post" action="/validator_sign_in_submitted">
   <p>
-    Email: <input name="email" type="text" value="" />
+   <label for="email">Email:</label>
+   <input name="email" type="text" value="" />
   </p>
   <p>
-    Password: <input name="password" type="password" value="" />
+    <label for="password">Password: </label><input name="password" type="password" value="" />
   </p>
-  <input type="submit" value="Take me back!" />
+  <p>
+  <input type="submit" value="Take me back!" /></p>
 </form>
 
 <%= erb :html_footer %>
