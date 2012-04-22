@@ -9,31 +9,6 @@ $db.authenticate("humancentipede", "abc123!")
 $validators = $db.collection("validators")
 $profile_requests = $db.collection("profile_requests")
 
-class ValidatorStore
-  def initialize
-    @db = Mongo::Connection.new("ds029287.mongolab.com", 29287).db("leancentipede")
-    @db.authenticate("humancentipede", "abc123!")
-    @analysis_events = @db.collection("validators")
-  end
-
-  def persist validator
-    @analysis_events.insert(validator, :safe=>true)
-  end
-
-  def get_all_events_for analysis_id
-    results = Array.new
-    @analysis_events.find({:analysis_id => analysis_id}).sort([['version',1]]).to_a
-  end
-
-  def get_all_events
-    @analysis_events.find({}).to_a
-  end
-
-  def create_event_store_for analysis_id
-
-  end
-end
-
 configure :development do
   Sinatra::Application.reset!
   use Rack::Reloader
@@ -74,6 +49,7 @@ post "/validator_sign_up_submitted" do
   survey[:expertise] = params[:expertise]
   survey[:adoption] = params[:adoption]
   survey[:voice_call] = params[:voice_call]
+  survey[:max_questions] = params[:max_questions]
 
   $validators.insert(survey, :safe=>true)
 
