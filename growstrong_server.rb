@@ -8,6 +8,8 @@ configure :development do
   use Rack::Reloader
 end
 
+@@Surveys = Array.new
+
 set :public_folder, "./public"
 set :views, "./views"
 
@@ -24,7 +26,24 @@ get "/interviewer_sign_up" do
 end
 
 post "/interviewee_sign_up_submitted" do
-  erb :interviewee_sign_up_submitted
+
+  survey = {}
+
+  survey[:email] = params[:email]
+  survey[:pass] =  params[:pass]
+  survey[:paypal_id]= params[:paypal_id]
+  survey[:gender] = params[:gender]
+  survey[:age] = params[:age]
+  survey[:income] = params[:income]
+  survey[:products] = params[:products]
+  survey[:expertise] = params[:expertise]
+  survey[:adoption] = params[:adoption]
+  survey[:voice_call] = params[:voice_call]
+
+  @@Surveys << survey
+
+  @@Surveys.to_json
+  #erb :interviewee_sign_up_submitted
 end
 
 post "/interviewer_sign_up_submitted" do
