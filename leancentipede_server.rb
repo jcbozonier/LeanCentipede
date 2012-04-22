@@ -41,6 +41,13 @@ end
 
 post "/validator_sign_up_submitted" do
 
+  insert_validator(params, false)
+  erb :validator_sign_up_submitted
+
+end
+
+def insert_validator(params, replace)
+
   survey = {}
 
   survey[:email] = params[:email]
@@ -56,13 +63,16 @@ post "/validator_sign_up_submitted" do
   survey[:max_questions] = params[:max_questions]
 
   if(checkForExisting($validators, survey[:email], survey[:password]))
-    @message = "That email address is already in use!"
-    return erb :validator_sign_up
+    if(!replace)
+      @message = "That email address is already in use!"
+      return erb :validator_sign_up
+    else
+      $validators.remove(:email=> survey[:email])
+    end
   end
 
   $validators.insert(survey, :safe=>true)
 
-  erb :validator_sign_up_submitted
 end
 
 post "/validator_sign_in_submitted" do
@@ -145,6 +155,12 @@ get "/validator_home" do
   @validator = $validators.find({:email=> session[:email]}).first
 
   return erb :validator_home
+end
+
+post "/validator_update_submitted" do
+  insert_validator(params, true)
+
+  redirect "/validator_home"
 end
 
 post "/check_validation_interview_order" do
