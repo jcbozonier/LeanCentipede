@@ -36,5 +36,5 @@ get "/search_for_validation" do
 end
 
 get "/check_validation_interview_order" do
-
+  erb :check_validation_interview_order
 end
