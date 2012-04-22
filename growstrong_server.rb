@@ -25,6 +25,10 @@ get "/view_validators_and_visionaries" do
     erb :view_validators_and_visionaries
 end
 
+get "/returning_interviewee" do
+  erb :interviewee_sign_in
+end
+
 post "/interviewee_sign_up_submitted" do
 
   survey = {}
