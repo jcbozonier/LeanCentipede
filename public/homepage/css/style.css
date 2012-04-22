@@ -1,0 +1,701 @@
+@charset "utf-8";
+/* CSS Document */
+/*General page layout*/
+/*---------------------------------------------------------------------------
+1. typography and default
+2. basic columns
+3. images styles
+4. button styles
+
+Index page style
+
+	1. header_top_bg
+		1.1 header_bg
+				- logo
+				- social
+	2. header
+		2.1 column_2
+				- general list
+		2.2 subscribe
+				- subscribe form
+	3. content_bg
+		3.1 content
+				- column_onethird
+						- features
+				- column_twothird
+						- video
+						- button
+	4. pricing
+		4.1 pr_head
+		4.2 table_1
+		4.3 table_2
+		4.4 table_3
+	5. gallery_bg
+		5.1 gallery
+				- gallery images
+	6. sub_footer_bg
+		6.1 sub_footer
+				- column_3 for testimonial
+				- column_3 for payment methods
+				- column_3_last for contact form
+	7. footer
+			- copyright
+			- general links / social
+ --------------------------------------------------------------------------*/
+body {
+	background: url(../images/body-bg.jpg) repeat #f8f8f8;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	color: #939698;
+	line-height: 1.8em;
+	text-shadow: 0px 1px 0px #f8f8f8;
+	width:  100%;
+}
+.clear {
+	clear:both;
+}
+/*typography and default*/
+/*---------------------------------------------------------------------------*/
+h1, h2 {
+	color: #465864;
+	line-height: 1em;
+	font-weight: normal;
+}/*Margin bottom to headings as line-height property do not work well with many browsers in case of cufon*/
+h1 {
+	font-size: 60px;
+	margin-bottom: 10px;
+}
+h2 {
+	font-size: 36px;
+	margin-bottom: 15px;
+}
+h3 {
+	font-size: 32px;
+	color: #465864;
+	padding-bottom:5px;
+	border-bottom:1px solid #cecece;
+	margin-bottom: 15px;
+}
+a {
+	color: #465864;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+p{padding:20px 0;}
+/*basic columns */
+/*---------------------------------------------------------------------------*/
+/*all column styles given here are not used in template, some additional styles are given if you need to use while customization*/
+
+/*twothird and onethird columns*/
+.column_onethird {
+	width: 300px;
+	margin-right: 20px;
+	float: left;
+}
+.column_twothird {
+	width: 620px;
+	float: left;
+}
+/*two columns*/
+.column_2 {
+	width: 460px;
+	margin-right: 20px;
+	float: left;
+}
+.column_2_last {
+	width: 460px;
+	margin: 0;
+	float: left;
+}
+/*three columns*/
+.column_3 {
+	width: 300px;
+	margin-right: 20px;
+	float: left;
+}
+.column_3_last {
+	width: 300px;
+	margin: 0;
+	float: left;
+}
+/*four columns*/
+.column_4 {
+	width: 220px;
+	margin-right: 20px;
+	float: left;
+}
+.column_4_last {
+	width: 220px;
+	margin: 0;
+	float: left;
+}
+/*columns threefourth and onefourth*/
+.column_onefourth {
+	width: 220px;
+	margin-right: 20px;
+	float: left;
+}
+
+.column_onehalf{width: 45%; margin:40px 40px 60px 0; float:left;}
+
+.column_threefourth {
+	width: 700px;
+	margin: 0;
+	float: left;
+}
+/*image styles */
+/*---------------------------------------------------------------------------*/
+/*all image styles given here are not used in template, 
+some additional styles are given if you need to use while customization*/
+.image_left {
+	float: left;
+	margin-right: 10px;
+}
+.image_right {
+	float: right;
+	margin-left: 10px;
+}
+/*Images to be at center, needs to adjust margin top and bottom as per image size*/
+.image_left_center {
+	float: left;
+	margin: 25px 10px 15px 0px;
+}
+.image_right_center {
+	float: right;
+	margin: 25px 0px 15px 10px;
+}
+/*button styles */
+/*---------------------------------------------------------------------------*/
+.button_1 {
+	background: url(../images/calltoaction-btn.png) no-repeat;
+	width: 282px;
+	height: 52px;
+	margin-top: 30px;
+	float: left;
+}
+.button_1 a {
+	font-size: 26px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 11px;
+	padding-bottom: 10px;
+	display: block;
+}
+.button_2 {
+	background: url(../images/buy-btn.png) no-repeat;
+	width: 78px;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 50px;
+	float: left;
+}
+.button_2 a {
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 4px;
+	display: block;
+}
+/*----------------------------------------*/
+/*Index page style*/
+/*----------------------------------------*/
+
+/*header_top_bg*/
+/*---------------------------------------------------------------------------*/
+#header_top_bg {
+	background: url(../images/header-bg.png) repeat-x center bottom;
+	width: 100%;
+	padding: 20px 0px;
+	font-size: 13px;
+	color: #7d7e7f;
+}
+#header_top {
+	width: 940px;
+	margin: 0 auto;
+}
+/*----------logo----------*/
+.logo {
+	float: left;
+	font-family: 'Mate SC', serif;
+	font-size:32px;
+	letter-spacing:1px;
+	padding:10px 20px 10px 0 ;
+	
+	
+}
+/*----------social----------*/
+#header_top ul {
+	float: right;
+	padding-top: 13px;
+}
+#header_top ul li {
+	background: none;
+	list-style: none;
+	float: left;
+	padding-left: 10px;
+}
+/*header*/
+/*---------------------------------------------------------------------------*/
+#header {
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0px;
+	color: #7d7e7f;
+	text-align:center;	
+}
+/*----------general list----------*/
+ul.list li {
+	background: url(../images/bullet-arrow.png) no-repeat 0 4px;
+	padding-left: 25px;
+	line-height: 2em;
+	list-style: none;
+	display: block;
+}
+/*----------subscribe form----------*/
+.subscribe {
+	width: 460px;
+	float: left;
+	position: relative;
+}
+/*subscribe form*/
+form#subform fieldset {
+	border: none;
+	background: none;
+}
+form#subform fieldset p {
+	background: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+form#subform input {
+	width: 302px;
+	height: 32px;
+	background: url(../images/signup-input.png) no-repeat;
+	padding: 5px;
+	margin: 0;
+	font-family: Arial, Trebuchet MS, Verdana, sans-serif;
+	font-size: 12px;
+	color: #939698;
+	line-height: 2.6em;
+	outline: none;
+	border: none;
+	float: left;
+}
+form#subform input.sub_submit {
+	width: 132px;
+	height: 42px;
+	background: url(../images/signup-btn.png) no-repeat;
+	padding: 0;
+	margin-left: 16px;
+	float: left;
+	font-family: Arial, Trebuchet MS, Verdana, sans-serif;
+	font-size: 16px;
+	color: #ffffff;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	display: block;
+}
+/*position of error is relative to "suscribe" div*/
+form#subform label.error {
+	width: 0px;
+	font-size: 0px;
+	line-height: 0em;
+	display: none !important;
+}
+form#subform input.error {
+	width: 302px;
+	height: 32px;
+	background: url(../images/signup-input-error.png) no-repeat;
+}
+form#subform #result_sub {
+	width: 460px;
+	font-size: 12px;
+	text-align: left;
+	float: left;
+}
+p.disclose {
+	font-size: 11px;
+	color: #979c9f;
+}
+/*content_bg*/
+/*---------------------------------------------------------------------------*/
+#content_bg {
+	width: 100%;
+	background: #f8f8f8;
+	padding: 30px 0px;
+}
+#content {
+	width: 940px;
+	margin: 0 auto;
+}
+/*----------list for features----------*/
+ul.features {
+	margin-top: 20px;
+}
+ul.features li {
+	width: 300px;
+	display: block;
+	padding:2px 0 2px 10px; 
+	margin-bottom: 20px;
+	list-style: circle !important;
+}
+ul.features li.last_feature {
+	margin-bottom: 0px;
+}
+/*----------video----------*/
+.video_bg {
+	background: #ffffff;
+	border: 1px solid #ebebeb;
+	padding: 4px;
+	width: 610px;
+	height: 355px;
+}
+.video_shadow {
+	background: url(../images/box-shadow.png) no-repeat center top;
+	width: 620px;
+	height: 15px;
+}
+/*always specify height and width to video*/
+/*----------text next to button----------*/
+.plan {
+	font-size: 14px;
+	font-style: italic;
+	padding-top: 45px;
+	padding-left: 30px;
+	float: left;
+	display: block;
+}
+/*pricing*/
+/*---------------------------------------------------------------------------*/
+.pricing {
+	width: 940px;
+	margin: 0 auto;
+	padding: 30px 0px;
+	color: #7d7e7f;
+}
+/*pr_head for image of pricing heading*/
+.pr_head {
+	background: url(../images/pricing-heading-bg.png) no-repeat;
+	width: 220px;
+	height: 146px;
+	float: left;
+	margin-top: 100px;
+}
+.pr_head h1 {
+	font-size: 40px;
+	text-align: center;
+	margin-top: 57px;
+}
+/*----------table----------*/
+.table_bg {
+	width: 220px;
+	float: left;
+	margin-left: 20px;
+}
+.table_top {
+	background: url(../images/table-top.png) no-repeat;
+	width: 220px;
+	height: 5px;
+	float: left;
+}
+.table_bottom {
+	background: url(../images/table-bottom.png) no-repeat;
+	width: 220px;
+	height: 5px;
+	float: left;
+}
+.divider {
+	background: url(../images/divider-dotted.png) repeat-x;
+	width: 100%;
+	height: 2px;
+	margin: 20px 0px;
+}
+/*table_middle includes all content of table*/
+.table_middle {
+	background: url(../images/table-middle.png) repeat-y;
+	width: 180px;
+	float: left;
+	padding: 15px 20px;
+	text-align: center;
+	font-size: 13px;
+}
+.table_middle h1 {
+	font-size: 30px;
+	margin-bottom: 5px;
+}
+.table_middle p {
+	font-size: 18px;
+	font-weight: bold;
+}
+.table_middle ul {
+	line-height: 1.6em;
+}
+.table_middle h1 span {
+	font-size: 18px;
+}
+/*gallery_bg*/
+/*---------------------------------------------------------------------------*/
+#gallery_bg {
+	width: 100%;
+	background: #f8f8f8;
+	padding: 30px 0px;
+}
+#gallery {
+	width: 940px;
+	margin: 0 auto;
+}
+ul.gallery li {
+	width: 172px;
+	height: 120px;
+	background: #ffffff;
+	margin-right: 20px;
+	position: relative;
+	list-style: none;
+	float: left;
+}
+ul.gallery li.last_image {
+	margin-right: 0px;
+}
+ul.gallery li img {
+	border: 1px solid #ebebeb;
+	padding: 5px;
+}
+ul.gallery li a span {
+	width: 160px;
+	height: 110px;
+	background-color: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	z-index: 10;
+	display: none;
+}
+ul.gallery li a span img, ul.gallery li.last_image a span img {
+	width: 34px;
+	height: 34px;
+	border:none;
+	margin-top: 35px;
+	margin-left: 60px;
+	background: none !important;
+}
+/*sub_footer_bg*/
+/*---------------------------------------------------------------------------*/
+#sub_footer_bg {
+	width: 100%;
+	background: #f8f5ea;
+	padding: 30px 0px;
+	color: #9b9ea1;
+	border-top: 1px solid #ebebeb;
+}
+#sub_footer {
+	width: 940px;
+	margin: 0 auto;
+}
+/*----------testimonial----------*/
+#testimonial {
+	position: relative;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 16px;
+	font-style: italic;
+}
+#testimonial span {
+	padding-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	text-align: right;
+	line-height: 1.2em;
+	display: block;
+	float: right;
+}
+#pager {
+	position:absolute;
+	left:0px;
+	top: 120px;
+	display: block;
+}
+#pager a {
+	width:13px;
+	height:17px;
+	background: url(../images/pager.png) no-repeat 0 0;
+	padding-left: 6px;
+	border:0px;
+	cursor:pointer;
+	display:inline-block;
+	vertical-align:top;
+	font-size: 0;
+	line-height: 0;
+	float: left;
+}
+#pager a.activeSlide {
+	width:13px;
+	height:17px;
+	background: url(../images/pager.png) no-repeat 0 -20px;
+	margin-top:0px;
+}
+/*----------payment methods----------*/
+ul.payment {
+	width: 300px;
+	padding: 10px 0px;
+}
+ul.payment li {
+	padding-right: 10px;
+	background: none;
+	list-style: none;
+	float: left;
+}
+.pay_info {
+	font-size: 13px;
+	color: #644646;
+}
+/*----------contact form----------*/
+form.contact_form {
+	width: 300px;
+}
+form.contact_form fieldset {
+	border: none;
+	background: none;
+}
+form.contact_form fieldset p {
+	background: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+form.contact_form label {
+	width: 58px;
+	height: 30px;
+	padding-top: 6px;
+	font-size: 14px;
+	color: #465864;
+	display: inline-block;
+	float: left;
+}
+form.contact_form input {
+	width: 232px;
+	height: 20px;
+	background: url(../images/cform-input.png) no-repeat;
+	padding: 5px;
+	margin: 10px 0px 0px 0px;
+	font-family: Arial, Trebuchet MS, Verdana, sans-serif;
+	font-size: 12px;
+	color: #939698;
+	line-height: 1.6em;
+	border: none;
+	outline: none;
+	float: left;
+}
+form.contact_form textarea {
+	width: 232px;
+	height: 80px;
+	background: url(../images/cform-txtarea.png) no-repeat;
+	padding: 5px;
+	margin: 10px 0px 0px 0px;
+	font-family: Arial, Trebuchet MS, Verdana, sans-serif;
+	font-size: 12px;
+	color: #939698;
+	line-height: 1.2em;
+	border: none;
+	outline: none;
+	float: left;
+}
+form.contact_form input.submit {
+	background: url(../images/cform-submit-btn.png) no-repeat 0 0;
+	width: 78px;
+	height: 30px;
+	margin: 10px 0px 0px 98px;
+	padding: 0;
+	font-family: Arial, Trebuchet MS, Verdana, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: bold;
+	float: right;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	display: block;
+}
+/*label.error is not used for this template*/
+form.contact_form label.error {
+	width: 0px;
+	font-size: 0px;
+	line-height: 0em;
+	display: none !important;
+}
+form.contact_form input.error {
+	width: 232px;
+	height: 20px;
+	background: url(../images/cform-input-error.png) no-repeat;
+}
+form.contact_form textarea.error {
+	width: 232px;
+	height: 80px;
+	background: url(../images/cform-txtarea-error.png) no-repeat;
+}
+form.contact_form #result {
+	width: 300px;
+	float: left;
+	text-align: right;
+	padding-top: 5px;
+}
+/*footer*/
+/*---------------------------------------------------------------------------*/
+#footer {
+	width: 940px;
+	margin: 0 auto;
+	padding: 30px 0px;
+	font-size: 11px;
+	color: #7d7e7f;
+}
+#footer p {
+	float: left;
+}
+#footer ul {
+	float: right;
+}
+#footer ul li {
+	padding-left: 10px;
+	list-style: none;
+	background: none;
+	float: left;
+}
+/*tipsy*/
+/*---------------------------------------------------------------------------*/
+.tipsy {
+	padding: 5px;
+	font-size: 12px;
+	background-repeat: no-repeat;
+	background-image: url(../images/tipsy.gif);
+	text-shadow: none;
+}
+.tipsy-inner {
+	padding: 5px 8px 4px 8px;
+	background-color: #8bafc6;
+	color: #ffffff;
+	max-width: 200px;
+	text-align: center;
+}
+.tipsy-inner {
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+.tipsy-north {
+	background-position: top center;
+}
+.tipsy-south {
+	background-position: bottom center;
+}
+.tipsy-east {
+	background-position: right center;
+}
+.tipsy-west {
+	background-position: left center;
+}
+a.tipsy_hover {
+	display: block;
+}
