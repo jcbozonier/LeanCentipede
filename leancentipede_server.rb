@@ -7,6 +7,7 @@ require "mongo"
 $db = Mongo::Connection.new("ds029287.mongolab.com", 29287).db("leancentipede")
 $db.authenticate("humancentipede", "abc123!")
 $validators = $db.collection("validators")
+$visionaries = $db.collection("visionaries")
 $profile_requests = $db.collection("profile_requests")
 
 class ValidatorStore
@@ -109,6 +110,14 @@ get "/search_for_validation" do
 end
 
 post "/visionary_sign_up_submitted" do
+
+  visionary = {}
+
+  visionary[:email] = params[:email]
+  visionary[:password] = params[:password]
+
+  $visionaries.insert(visionary, :safe=>true)
+
   erb :visionary_sign_up_submitted
 end
 
