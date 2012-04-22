@@ -73,13 +73,15 @@ post "/validator_sign_in_submitted" do
   if((!result.nil?) && result.count > 0 )
 
     if(result["pass"] == password)
-      return "You're in"
+      redirect '/validator_home'
     else
-      return "Invalid password"
+      @message = "Invalid username or password"
+      return :validator_sign_in
     end
   end
 
-  return "You don't exist"
+  @message = "Invalid username or password"
+  return erb :validator_sign_in
 
 end
 
@@ -101,6 +103,7 @@ post "/visionary_sign_in_submitted" do
   if((!result.nil?) && result.count > 0 )
 
     if(result["password"] == password)
+
       return erb :visionary_signed_in
     else
       @message = "Invalid username or password"
@@ -132,6 +135,10 @@ post "/visionary_sign_up_submitted" do
   $visionaries.insert(visionary, :safe=>true)
 
   erb :visionary_sign_up_submitted
+end
+
+get "/validator_home" do
+  return erb :validator_home
 end
 
 post "/check_validation_interview_order" do
