@@ -91,7 +91,7 @@ get "/returning_visionary" do
   erb :visionary_sign_in
 end
 
-post "visionary_sign_in_submitted" do
+post "/visionary_sign_in_submitted" do
 
   username = params[:email]
   password = params[:password]
@@ -100,14 +100,16 @@ post "visionary_sign_in_submitted" do
 
   if((!result.nil?) && result.count > 0 )
 
-    if(result["pass"] == password)
-      return "You're in"
+    if(result["password"] == password)
+      return erb :visionary_signed_in
     else
-      return "Invalid password"
+      @message = "Invalid username or password"
+      return erb :visionary_sign_in
     end
   end
 
-  return "You don't exist"
+  @message = "Invalid username or password"
+  return erb :visionary_sign_in
 
 end
 

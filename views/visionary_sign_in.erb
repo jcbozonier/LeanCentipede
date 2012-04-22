@@ -1,6 +1,7 @@
 <%= erb :html_header  %>
 
 <h1>WELCOME BACK!!!</h1>
+<p><%= @message.nil? ? "" : @message %></p>
 <form method="post" action="/visionary_sign_in_submitted">
   <p>
     Email: <input name="email" type="text" value="" /><span>
