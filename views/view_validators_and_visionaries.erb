@@ -1,5 +1,13 @@
 <%= erb :html_header %>
+
 <h2>Visionaries</h2>
+<ul>
+  <% for visionary in @visionaries %>
+      <li><%= visionary.to_json %></li>
+  <% end %>
+</ul>
+
+<h2>Profile Requests</h2>
 <ul>
 <% for requested_profile in @profile_requests %>
     <li><%= requested_profile.to_json %></li>

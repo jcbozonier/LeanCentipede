@@ -27,6 +27,7 @@ get "/validator_sign_up" do
 end
 
 get "/view_validators_and_visionaries" do
+    @visionaries = $visionaries.find({}).to_a
     @validators = $validators.find({}).to_a
     @profile_requests = $profile_requests.find({}).to_a
     erb :view_validators_and_visionaries
@@ -51,6 +52,11 @@ post "/validator_sign_up_submitted" do
   survey[:adoption] = params[:adoption]
   survey[:voice_call] = params[:voice_call]
   survey[:max_questions] = params[:max_questions]
+
+  if(checkForExisting($validators, survey[:email], survey[:password]))
+    @message = "That email address is already in use!"
+    return erb :validator_sign_up
+  end
 
   $validators.insert(survey, :safe=>true)
 
@@ -116,6 +122,11 @@ post "/visionary_sign_up_submitted" do
   visionary[:email] = params[:email]
   visionary[:password] = params[:password]
 
+  if(checkForExisting($visionaries, visionary[:email], visionary[:password]))
+    @message = "That email address is already in use!"
+    return erb :visionary_sign_up
+  end
+
   $visionaries.insert(visionary, :safe=>true)
 
   erb :visionary_sign_up_submitted
@@ -134,4 +145,11 @@ post "/check_validation_interview_order" do
   $profile_requests.insert(profile, :safe=>true)
 
   erb :visionary_sign_up_submitted
+end
+
+def checkForExisting(collection, email, password)
+
+  result = collection.find({:email=> email}).first
+
+  !result.nil?
 end

@@ -1,5 +1,6 @@
 <%= erb :html_header %>
   <h1>Sign up</h1>
+   <p><%= @message.nil? ? "" : @message %></p>
    <form method="post" action="/validator_sign_up_submitted">
         <p>
           <label for="email">Email: </label>
