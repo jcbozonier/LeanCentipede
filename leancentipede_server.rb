@@ -45,7 +45,6 @@ post "/validator_sign_up_submitted" do
 end
 
 def insert_validator(params, replace)
-
   survey = {}
   survey[:email] = params[:email]
   survey[:pass] =  params[:pass]
@@ -66,6 +65,8 @@ def insert_validator(params, replace)
     else
       $validators.remove(:email=> survey[:email])
     end
+  else
+    session[:email] = params[:email]
   end
 
   $validators.insert(survey, :safe=>true)
