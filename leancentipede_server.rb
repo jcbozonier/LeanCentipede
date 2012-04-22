@@ -82,6 +82,26 @@ get "/visionary_sign_up" do
 end
 
 get "/returning_visionary" do
+  erb :visionary_sign_in
+end
+
+post "visionary_sign_in_submitted" do
+
+  username = params[:email]
+  password = params[:password]
+
+  result = $visionaries.find({:email=> username}).first
+
+  if((!result.nil?) && result.count > 0 )
+
+    if(result["pass"] == password)
+      return "You're in"
+    else
+      return "Invalid password"
+    end
+  end
+
+  return "You don't exist"
 
 end
 
