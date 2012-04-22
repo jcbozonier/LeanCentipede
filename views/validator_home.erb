@@ -1,5 +1,6 @@
 <%= erb :html_header  %>
 
+<h2><%= @validator.to_json %></h2>
     <h1>Current Surveys</h1>
 <form method="post" action="/validator_sign_up_submitted">
   <p>
@@ -23,22 +24,16 @@
   </p>
   <p>
     <label for="income">Income</label>
-    <select name="income">
-      <option><$25,000</option>
-      <option>$25,000-$50,000</option>
-      <option>$50,000-$75,000</option>
-      <option>$75,000-$100,000</option>
-      <option>$100,000+</option>
-    </select>
+    <input type="number" name="income" value="<%=@validator["income"]%>" />
   </p>
   <p>
     <label for="products">What products or services do you see yourself buying in the next 6 months?</label>
-    <textarea name="products" value="<%=@validator["products"]%>"></textarea>
+    <textarea name="products"><%=@validator["products"]%></textarea>
   </p>
 
   <p>
     <label for="expertise">What do you consider yourself a specialist/expert in?</label>
-    <textarea name="expertise"></textarea>
+    <textarea name="expertise"><%= @validator["expertise"] %></textarea>
   </p>
 
   <p>
@@ -56,7 +51,7 @@
 
   <p>
     <label for="max_questions">How many open ended questions would you be willing to answer for $7?</label>
-    <input type="text" name="max_questions" value="15" />
+    <input type="text" name="max_questions" value="<%=@validator["max_questions"]%>" />
   </p>
 
   <input type="submit" value="Sign up!" />
