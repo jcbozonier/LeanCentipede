@@ -25,7 +25,5 @@ post "/check_validation_interview_order" do
 
   $requested_profiles << profile
 
-  puts $requested_profiles
-
   erb :interviewer_sign_up_submitted
 end

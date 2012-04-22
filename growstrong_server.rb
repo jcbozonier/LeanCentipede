@@ -38,6 +38,5 @@ post "/interviewee_sign_up_submitted" do
 
   $Interviewees << survey
 
-  puts $Interviewees
   erb :interviewee_sign_up_submitted
 end
