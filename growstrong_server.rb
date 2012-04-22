@@ -8,7 +8,7 @@ configure :development do
   use Rack::Reloader
 end
 
-@@Interviewees = Array.new
+$Interviewees = Array.new
 
 set :public_folder, "./public"
 set :views, "./views"
@@ -36,7 +36,8 @@ post "/interviewee_sign_up_submitted" do
   survey[:adoption] = params[:adoption]
   survey[:voice_call] = params[:voice_call]
 
-  @@Interviewees << survey
+  $Interviewees << survey
 
+  puts $Interviewees
   erb :interviewee_sign_up_submitted
 end
