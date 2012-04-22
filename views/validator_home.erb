@@ -1,11 +1,12 @@
 <%= erb :html_header  %>
 
-<h2><%= @validator.to_json %></h2>
     <h1>Current Surveys</h1>
-<form method="post" action="/validator_sign_up_submitted">
+
+<h1>Profile Update</h1>
+<form method="post" action="/validator_update_submitted">
   <p>
     <label for="email">Email: </label>
-    <input name="email" type="text" value="<%=@validator["email"]%>" />
+    <input name="email" readonly="true" type="text" value="<%=@validator["email"]%>" />
   </p>
   <p>
     <label for="pass">Password: </label>
@@ -54,6 +55,6 @@
     <input type="text" name="max_questions" value="<%=@validator["max_questions"]%>" />
   </p>
 
-  <input type="submit" value="Sign up!" />
+  <input type="submit" value="Update!" />
 </form>
 <%= erb :html_footer  %>
