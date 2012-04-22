@@ -1,13 +1,13 @@
 <h2>Visionaries</h2>
 <ul>
-<% for requested_profile in $requested_profiles %>
+<% for requested_profile in @profile_requests %>
     <li><%= requested_profile.to_json %></li>
 <% end %>
 </ul>
 
 <h2>Validators</h2>
 <ul>
-<% for validator in $Interviewees %>
+<% for validator in @validators %>
     <li><%= validator.to_json %></li>
 <% end %>
 </ul>

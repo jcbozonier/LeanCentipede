@@ -1,4 +1,4 @@
-$requested_profiles = Array.new
+
 
 get "/interviewer_sign_up" do
   erb :interviewer_sign_up
@@ -22,7 +22,7 @@ post "/check_validation_interview_order" do
   profile[:adoption] = params[:adoption]
   profile[:voice_call] = params[:voice_call]
 
-  $requested_profiles << profile
+  $profile_requests.insert(profile, :safe=>true)
 
   erb :interviewer_sign_up_submitted
 end
