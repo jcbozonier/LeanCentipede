@@ -13,7 +13,6 @@ post "/interviewer_sign_up_submitted" do
 end
 
 post "/check_validation_interview_order" do
-
   profile = {}
   profile[:gender] = params[:gender]
   profile[:age] = params[:age]
