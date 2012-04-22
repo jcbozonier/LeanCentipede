@@ -21,6 +21,10 @@ get "/interviewee_sign_up" do
   erb :interviewee_sign_up
 end
 
+get "/view_validators_and_visionaries" do
+    erb :view_validators_and_visionaries
+end
+
 get "/returning_interviewee" do
   erb :interviewee_sign_in
 end
