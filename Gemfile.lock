@@ -3,6 +3,8 @@ GEM
   specs:
     backports (2.5.1)
     bson (1.6.2)
+    bson_ext (1.6.2)
+      bson (~> 1.6.2)
     eventmachine (0.12.10)
     macaddr (1.5.0)
       systemu (>= 2.4.0)
@@ -33,6 +35,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
   mongo
   rack-test
   sinatra
