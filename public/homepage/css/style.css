@@ -206,7 +206,8 @@ some additional styles are given if you need to use while customization*/
 /*header_top_bg*/
 /*---------------------------------------------------------------------------*/
 #header_top_bg {
-	background: url(../images/header-bg.png) repeat-x center bottom;
+	/*background: url(../images/header-bg.png) repeat-x center bottom;*/
+	background:#fff;
 	width: 100%;
 	padding: 20px 0px;
 	font-size: 13px;
