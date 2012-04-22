@@ -52,6 +52,7 @@ body {
 	text-shadow: 0px 1px 0px #f8f8f8;
 	width:  100%;
 }
+.pricing ul li{list-style: circle; margin:0 5px; text-align:left;}
 .clear {
 	clear:both;
 }
@@ -147,7 +148,7 @@ p{padding:20px 0;}
 }
 /*image styles */
 /*---------------------------------------------------------------------------*/
-/*all image styles given here are not used in template, 
+/*all image styles given here are not used in template,
 some additional styles are given if you need to use while customization*/
 .image_left {
 	float: left;
@@ -222,8 +223,8 @@ some additional styles are given if you need to use while customization*/
 	font-size:32px;
 	letter-spacing:1px;
 	padding:10px 20px 10px 0 ;
-	
-	
+
+
 }
 /*----------social----------*/
 #header_top ul {
@@ -243,7 +244,7 @@ some additional styles are given if you need to use while customization*/
 	margin: 0 auto;
 	padding: 50px 0px;
 	color: #7d7e7f;
-	text-align:center;	
+	text-align:center;
 }
 /*----------general list----------*/
 ul.list li {
@@ -340,7 +341,7 @@ ul.features {
 ul.features li {
 	width: 300px;
 	display: block;
-	padding:2px 0 2px 10px; 
+	padding:2px 0 2px 10px;
 	margin-bottom: 20px;
 	list-style: circle !important;
 }
