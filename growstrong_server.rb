@@ -44,3 +44,23 @@ post "/interviewee_sign_up_submitted" do
 
   erb :interviewee_sign_up_submitted
 end
+
+post "/interviewee_sign_in_submitted" do
+
+  username = params[:email]
+  password = params[:password]
+
+  result = $Interviewees.select{|user| user[:email] == username}.first
+
+  if((!result.nil?) && result.count > 0 )
+
+    if(result[:pass] == password)
+      return "You're in"
+    else
+      return "Invalid password"
+    end
+  end
+
+  return "You don't exist"
+
+  end
