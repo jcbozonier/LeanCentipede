@@ -1,3 +1,4 @@
+<%= erb :html_header %>
 <h2>Visionaries</h2>
 <ul>
 <% for requested_profile in @profile_requests %>
@@ -11,3 +12,4 @@
     <li><%= validator.to_json %></li>
 <% end %>
 </ul>
+<%= erb :html_footer %>
