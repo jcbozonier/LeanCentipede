@@ -1,46 +1,52 @@
-<html>
+<%= erb :html_header %>
 <body>
+<div class="main-content">
 <form method="post" action="/check_validation_interview_order">
 <h1>Interviewee Criteria</h1>
- <p>
-  Gender
-  male female other (please specify): <input type="text" value="" />
-  <input type="checkbox" value="required?" checked/>
-</p>
-<p>
-Age <input type="text" value="?" /> <input type="checkbox" value="required?" checked/>
-</p>
-<p>
-Income <input type="checkbox" value="required?" checked/>
-</p>
+ </p>
+         <label for="gender">Gender</label>
+         <input name="gender" type="text" value="" />
+        </p>
+        <p>
+         <label for="age">Age</label>
+         <select name="age">
+           <option>18-25</option>
+           <option>26-40</option>
+           <option>41+</option>
+         </select>
+        </p>
+        <p>
+         <label for="income">Income</label>
+         <select name="income">
+           <option><$25,000</option>
+           <option>$25,000-$50,000</option>
+           <option>$50,000-$75,000</option>
+           <option>$75,000-$100,000</option>
+           <option>$100,000+</option>
+         </select>
+        </p>
+        <p>
+        <label for="products">What products or services do you see yourself buying in the next 6 months?</label>
+        <textarea name="products"></textarea>
+        </p>
 
-<p>
-What products or services do you see yourself buying in the next 6 months?
- <input type="checkbox" value="required?" checked/>
-[free text]
-</p>
+        <p>
+        <label for="expertise">What do you consider yourself a specialist/expert in?</label>
+        <textarea name="expertise"></textarea>
+        </p>
 
-<p>
-What do you consider yourself a specialist/expert in?
- <input type="checkbox" value="required?" checked/>
-[free text]
-</p>
+        <p>
+         <label for="adoption">How would you describe your comfort level in regards to buying/recommending new products and services you love?
+            <br/><input type="radio" name="adoption" value="1"> I gotta be the first on my block with the new and shiny<br/>
+            <input type="radio" name="adoption" value="2"> I wait until I hear a good review from a friend<br/>
+            <input type="radio" name="adoption" value="3"> I buy once all my friends have it and I know it's a safe purchase.<br/>
+        </p>
 
-<p>
-    How would you describe your comfort level in regards to buying/recommending new products and services you love?
-     <input type="checkbox" value="required?" checked/>
-    <ul>
-        <li>I gotta be the first on my block with the new and shiny</li>
-        <li>I wait until I hear a good review from a friend</li>
-        <li>I buy once all my friends have it and I know it's a safe purchase.</li>
-    </ul>
-</p>
-
-<p>
-Are you willing to do a voice call if you're approached for more detailed information?
- <input type="checkbox" value="required?" checked/>
-[yes] [no]
-</p>
+        <p>
+        <label for="voice_call">Are you willing to do a voice call if you're approached for more detailed information?</label>
+        <label><input type="radio" name="voice_call" value="yes" checked/> Yes</label>
+        <label><input type="radio" name="voice_call" value="no" /> No</label>
+        </p>
 
 <h1>Validation Survey</h1>
 
@@ -50,5 +56,5 @@ Are you willing to do a voice call if you're approached for more detailed inform
     <input type="submit" value="Create your validation survey!" />
 </p>
 </form>
-</body>
-</html>
+</div>
+<%= erb :html_footer %>
