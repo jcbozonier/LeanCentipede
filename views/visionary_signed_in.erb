@@ -1,4 +1,10 @@
 <%= erb :html_header %>
+
+<h2>My Requests</h2>
+<% @requests.each{ |request| if(!request["name"].nil?)%>
+    <p><%=request["name"]%>: Pending</p>
+<%end}%>
+<br />
 <h2>Create another business validation survey!</h2>
 <%= erb :search_for_validation %>
 <%= erb :html_footer %>

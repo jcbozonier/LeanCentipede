@@ -103,7 +103,13 @@ get "/returning_visionary" do
 end
 
 get "/visionary_signed_in" do
-    erb :visionary_signed_in
+
+      redirect "/visionary_home"
+end
+
+get "/visionary_home" do
+  @requests = $profile_requests.find(:visionary_email => session[:visionary_email]).to_a
+  erb :visionary_signed_in
 end
 
 get "/visionary_sign_in_submitted" do
@@ -174,6 +180,7 @@ post "/check_validation_interview_order" do
   profile = {}
 
   profile[:visionary_email] = session[:visionary_email]
+  profile[:name] = params[:name]
   profile[:gender] = params[:gender]
   profile[:age] = params[:age]
   profile[:income] = params[:income]
